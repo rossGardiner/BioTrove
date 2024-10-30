@@ -360,17 +360,19 @@
             <img src="static/images/category_distribution.png" alt="Category Distribution" style="cursor: pointer; width: 80%; height: auto;">
           </div>
           <p class="description">
-            Distribution of the BioTrove dataset. (a) Size of each taxonomic class in the BioTrove dataset. 
-            (b) Species counts for each taxonomic class. (c) The 40 highest occuring species.
+            <b\>Distribution of the BioTrove dataset.</b> (a) Size of the top seven Phyla in the
+            BioTrove dataset. (b) Species counts for the top seven Phyla. (c) The 40 highest occurring
+            species in entire BioTrove dataset.
           </p>
           
           <!-- Second Image -->
           <div class="publication-image" id="image-container-2">
-            <img src="static/images/treemap_134M_v1.png" alt="Sample Image 2" style="cursor: pointer; width: 80%; height: auto;">
+            <img src="static/images/treemap_162M_v1.png" alt="Sample Image 2" style="cursor: pointer; width: 80%; height: auto;">
           </div>
           <p class="description">
-            Treemap diagram of the BioTrove Dataset, starting from Kingdom. The nested boxes represent phyla, 
-            (taxonomic) classes, orders, and families. Box size represents the relative number of samples.
+            <b\>Treemap diagram of the BioTrove dataset</b>, starting from Kingdom. The
+            nested boxes represent phyla, (taxonomic) classes, orders, and families. Box size represents
+            the relative number of samples.
           </p>
           
           <!-- Third Image -->
@@ -378,7 +380,7 @@
             <img src="static/images/comparison.png" alt="Sample Image 3" style="cursor: pointer; width: 80%; height: auto;">
           </div>
           <p class="description">
-            Comparison of BioTrove Dataset with existing biodiversity datasets.
+            Comparison of BioTrove with existing biodiversity datasets.
           </p>
         </div>
       </div>
@@ -419,21 +421,21 @@
       <h1 class="title is-3">Dataset Benchmarks</h1>
       <div class="content">
         <p>
-        <b>BioTrove</b> consists of several benchmark datasets - <b>BioTrove-40M</b> and <b>New Benchmarks</b>.
+        <b>BioTrove</b> consists of several benchmark datasets - <b>BioTrove-Train</b> and <b>New Benchmarks</b>.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BioTrove40M Subsection -->
+<!-- BioTroveTrain Subsection -->
 <section class="hero is-small" style="margin-bottom: 1rem;">
   <div class="hero-body" style="padding-bottom: 1rem;">
     <div class="container">
-      <h2 class="title is-4">BioTrove-40M</h3>
+      <h2 class="title is-4">BioTrove-Train</h3>
       <div class="content">
         <p>
-        <b>BioTrove-40M</b> is a subset comprising approximately 40M samples and 33K species from the seven <b>BioTrove</b> categories (iNaturalist prior to January 27, 2024).
+        <b>BioTrove-Train</b> is a curated subset comprising approximately 40M samples and 33K species from the seven - Aves, Arachnida, Insecta, Plantae, Fungi, Mollusca, and Reptilia categories (iNaturalist prior to January 27, 2024).
         It contains 30 to maximum of 50,000 samples per species. We conducted semi-global shuffling and divided the data into mini-batches of approximately 50,000 samples each. From these
         mini-batches, 95% were randomly selected for training and validation, while the remaining 5% were reserved for testing.
         </p>
@@ -441,7 +443,7 @@
       <div class="image-container" style="text-align: center;">
         <img src="static/images/arboretum40m.png" alt="lifestages" style="width: 80%; height: auto;">
         <p class="caption has-text-centered">
-          Training data sources used in BioTrove-40M and Diversity in Different Taxonomy Levels. We integrate taxonomic labels into the images to train the models.
+          Training data sources used in BioTrove-Train and Diversity in Different Taxonomy Levels. We integrate taxonomic labels into the images.
         </p>
       </div>
     </div>
@@ -477,7 +479,7 @@
       <!-- Explanation text space -->
       <div class="content">
         <p>
-          We use <b>BioTrove-40M</b> to train new CLIP-style foundation models (ARBORCLIP), and then evaluate them on zero-shot image classification tasks. 
+          We use <b>BioTrove-Train</b> to train new CLIP-style foundation models (ARBORCLIP), and then evaluate them on zero-shot image classification tasks. 
           A ViT-B/16 backbone initialized from the OpenAI CLIP weights, a ViT-L/14 from the MetaCLIP and a ViT-B/16 from the BioCLIP checkpoint.
           The ArborCLIP model is designed to analyze and categorize various plant species using advanced machine learning techniques. 
           It leverages a vast dataset and sophisticated algorithms to achieve high accuracy in species recognition.
@@ -506,7 +508,7 @@
         <p>
         The <b>ARBORCLIP</b> models were developed for the benefit of the AI community as an open-source product. 
         We released three <b>ARBORCLIP</b> trained models based on OpenAI's <a href="https://openai.com/index/clip/" target="_blank" class="underline-link">CLIP</a> model. 
-        The models were trained on <b>ARBORETUM-40M</b> dataset. Please utilize our HuggingFace <a href="https://huggingface.co/ChihHsuan-Yang/ArborCLIP" target="_blank" class="underline-link">Model card</a> to access the model checkpoints.
+        The models were trained on <b>ARBORETUM-Train</b> dataset. Please utilize our HuggingFace <a href="https://huggingface.co/ChihHsuan-Yang/ArborCLIP" target="_blank" class="underline-link">Model card</a> to access the model checkpoints.
         </p>
       </div>
     </div>
