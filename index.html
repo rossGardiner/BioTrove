@@ -234,7 +234,7 @@
             </span>
             <!-- Hugging Face link -->
             <span class="link-block">
-              <a href="https://huggingface.co/datasets/ChihHsuan-Yang/Arboretum" target="_blank" class="external-link button is-normal is-rounded is-dark">
+              <a href="https://huggingface.co/datasets/BGLab/BioTrove" target="_blank" class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                   &#129303;
                 </span>
@@ -242,7 +242,7 @@
               </a>
             </span>
             <span class="link-block">
-              <a href="https://huggingface.co/ChihHsuan-Yang/ArborCLIP" target="_blank" class="external-link button is-normal is-rounded is-dark">
+              <a href="https://huggingface.co/BGLab/BioTrove-CLIP" target="_blank" class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                   &#129303;
                 </span>
@@ -388,31 +388,6 @@
   </div>
 </section>
 
-<!-- dataprep -->
-<section class="hero is-small" style="margin-bottom: 1rem;">
-  <div class="hero-body" style="padding-bottom: 1rem;">
-    <div class="container">
-      <h2 class="title is-3">Data Preparation</h2>
-      <div class="content">
-        <p>
-          Our <a href="https://github.com/baskargroup/BioTrove/blob/main/Arbor-preprocess/README_arbor_process.md" target="_blank" class="underline-link">Github</a> includes the pipeline and <a href="https://pypi.org/project/arbor-process/" target="_blank" class="underline-link">arbor-process</a> package installation instructions for the data preparation. 
-          The metadata can be downloaded from <a href="https://huggingface.co/datasets/ChihHsuan-Yang/Arboretum" target="_blank" class="underline-link">HF</a>. This procedure will generate machine learning-ready image-text pairs from the downloaded metadata in four steps:
-        </p>
-      </div>
-      <div class="image-container" style="text-align: center;">
-        <img src="static/images/dataprep.png" alt="datprep" style="width: 80%; height: auto;">
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-  .underline-link {
-    text-decoration: underline;
-  }
-</style>
-<!-- end of dataprep -->
-
 
 <!-- Main Datasets Section -->
 <section class="hero is-medium" style="margin-bottom: 1rem;">
@@ -471,6 +446,31 @@
   </div>
 </section>
 
+<!-- dataprep -->
+<section class="hero is-small" style="margin-bottom: 1rem;">
+  <div class="hero-body" style="padding-bottom: 1rem;">
+    <div class="container">
+      <h2 class="title is-3">Data Preparation</h2>
+      <div class="content">
+        <p>
+          Our <a href="https://github.com/baskargroup/BioTrove/blob/main/Arbor-preprocess/README_arbor_process.md" target="_blank" class="underline-link">Github</a> includes the pipeline and <a href="https://pypi.org/project/arbor-process/" target="_blank" class="underline-link">arbor-process</a> package installation instructions for the data preparation. 
+          The metadata can be downloaded from <a href="https://huggingface.co/datasets/BGLab/BioTrove-Train" target="_blank" class="underline-link">HF</a>. This procedure will generate machine learning-ready image-text pairs from the downloaded metadata in four steps:
+        </p>
+      </div>
+      <div class="image-container" style="text-align: center;">
+        <img src="static/images/dataprep.png" alt="datprep" style="width: 80%; height: auto;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .underline-link {
+    text-decoration: underline;
+  }
+</style>
+<!-- end of dataprep -->
+
 <!-- ArborCLIP model -->
 <section class="hero is-small">
   <div class="hero-body">
@@ -508,9 +508,9 @@
       <h1 class="title is-4">Model Weights</h1>
       <div class="content">
         <p>
-        The <b>ARBORCLIP</b> models were developed for the benefit of the AI community as an open-source product. 
-        We released three <b>ARBORCLIP</b> trained models based on OpenAI's <a href="https://openai.com/index/clip/" target="_blank" class="underline-link">CLIP</a> model. 
-        The models were trained on <b>ARBORETUM-Train</b> dataset. Please utilize our HuggingFace <a href="https://huggingface.co/ChihHsuan-Yang/ArborCLIP" target="_blank" class="underline-link">Model card</a> to access the model checkpoints.
+        The <b>BioTrove-CLIP</b> models were developed for the benefit of the AI community as an open-source product. 
+        We released three <b>BioTrove-CLIP</b> trained models based on OpenAI's <a href="https://openai.com/index/clip/" target="_blank" class="underline-link">CLIP</a> model. 
+        The models were trained on <b>BioTrove-Train</b> dataset. Please utilize our HuggingFace <a href="https://huggingface.co/BGLab/BioTrove-CLIP" target="_blank" class="underline-link">Model card</a> to access the model checkpoints.
         </p>
       </div>
     </div>
