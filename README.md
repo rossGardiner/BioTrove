@@ -17,7 +17,7 @@
 
 <hr style="margin: 10px 0; border: 0; border-top: 0.5px solid #ccc;">
 
-![Banner Image](static/images/banner.png)
+![Banner Image](static/images/Biotrove_top_7_phylum.png)
 <hr style="margin: 10px 0; border: 0; border-top: 0.5px solid #ccc;">
 
 ### Contents
