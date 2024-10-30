@@ -481,20 +481,22 @@
         <p>
           We use <b>BioTrove-Train</b> to train new CLIP-style foundation models (ARBORCLIP), and then evaluate them on zero-shot image classification tasks. 
           A ViT-B/16 backbone initialized from the OpenAI CLIP weights, a ViT-L/14 from the MetaCLIP and a ViT-B/16 from the BioCLIP checkpoint.
-          The ArborCLIP model is designed to analyze and categorize various plant species using advanced machine learning techniques. 
+          The BioTrove-CLIP model is designed to analyze and categorize various plant species using advanced machine learning techniques. 
           It leverages a vast dataset and sophisticated algorithms to achieve high accuracy in species recognition.
         </p>
       </div>
       <!-- Static Image with Caption -->
       <div class="image-container" style="text-align: center;">
-        <img src="static/images/arborclip_result.png" alt="ArborCLIP Model" style="width: 80%; height: auto; max-height: 400px;">
-        <p class="caption has-text-centered"><b>ARBORCLIP</b> performs well on a range of benchmarks. <b>ARBORCLIP-O</b> was pretrained
-          from an OpenAI model checkpoint, <b>ARBORCLIP-B</b> from the BioCLIP checkpoint, and
-          <b>ARBORCLIP-M</b> from a MetaCLIP-cc checkpoint. <b>AU</b> stands for Arboretum-Unseen, using Scientific
-          Names (n-classes=300). <b>AB</b> stands for Arboretum-Balanced, using Scientific Names (n-classes=
-          2253). <b>BCR</b> stands for the BioCLIP Rare species benchmark (n-classes=400). <b>F</b> stands for
-          Fungi (n-classes=25). <b>I2</b> stands for Insects2 (n-classes=102). <b>B</b> stands for Birds525 (n-classes=525),
-          <b>LS</b> for the Life Stages benchmark (n-classes=20), and <b>DW</b> for DeepWeeds (n-classes=9).</p>
+        <img src="static/images/bioTroveCLIPresults.png" alt="ArborCLIP Model" style="width: 80%; height: auto; max-height: 400px;">
+        <p class="caption has-text-centered"><b>BioTrove-CLIP</b> performances well on various benchmarks. The top three rows
+          are pre-trained checkpoints: OpenAI-B refers to OpenAI's ViT-B-16 model, BioCLIP-B
+          refers to the BioCLIP ViT-B-16 model, and MetaCLIP-L refers to the MetaCLIP-cc ViTL-
+          14 model. The bottom three rows are Biotrove-Clip models fine-tuned on different
+          checkpoints: BT-Clip-O (from OpenAI-B), BT-Clip-B (from BioCLIP-B), and BT-Clip-M
+          (from MetaCLIP-L). Benchmark abbreviations: BTU (Biotrove-Unseen, n=300), BTB
+          (Biotrove-Balanced, n=2253), BCR (BioCLIP-Rare, n=400), F (Fungi, n=25), I2 (Insects-2,
+          n=102), B (Birds-525, n=525), LS (Life-Stages, n=20), and DW (DeepWeeds, n=9). 95%
+          confidence intervals (±) are included.</p>
       </div>
     </div>
   </div>
