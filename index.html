@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="Project name: Arboretum">
+  <meta name="description" content="Project name: BioTrove">
   <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
   <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
   <meta property="og:url" content="URL OF THE WEBSITE"/>
@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Arboretum</title>
+  <title>BioTrove</title>
   <link rel="icon" type="image/x-icon" href="static/images/carousel4.jpg">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -150,7 +150,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title"> Arboretum: A Large Multimodal Dataset Enabling AI for Biodiversity</h1>
+          <h1 class="title is-1 publication-title"> BioTrove: A Large Curated Image Dataset Enabling AI for Biodiversity</h1>
           <div class="is-size-5 publication-authors">
             <!-- Paper authors -->
             <span class="author-block">
@@ -225,7 +225,7 @@
             </span> -->
             <!-- Github link -->
             <span class="link-block">
-              <a href="https://github.com/baskargroup/Arboretum" target="_blank" class="external-link button is-normal is-rounded is-dark">
+              <a href="https://github.com/baskargroup/BioTrove" target="_blank" class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                   <i class="fab fa-github"></i>
                 </span>
@@ -271,7 +271,7 @@
     <div class="hero-body">
       <img src="static/images/7_categories.png" alt="ArborCLIP">
       <h2 class="subtitle has-text-centered">
-        <b>The seven taxonomic classes in the Arboretum dataset.</b> Example images of the top 5 most frequent species 
+        <b>The seven taxonomic classes in the BioTrove dataset.</b> Example images of the top 5 most frequent species 
         in each category, including their counts, common names, and scientific names. For clarity, the word <b>class</b>
         used in this context is denoted <b>taxonomic class</b> in the rest of the paper to distinguish it from the other common ML definitions.
       </h2>
@@ -289,16 +289,17 @@
         <div class="content has-text-justified">
           <p>
 
-            We introduce Arboretum, the largest publicly accessible dataset designed to advance AI for biodiversity applications. This dataset, 
-            curated from the iNaturalist community science platform and vetted by domain experts to ensure accurate data, includes 134.6 million images, 
-            surpassing existing datasets in scale by an order of magnitude. The dataset encompasses image-language paired data for a diverse set of species 
-            from birds (Aves), spiders/ticks/mites (Arachnida), insects (Insecta), plants (Plantae), fungus/mushrooms (Fungi), snails (Mollusca), and snakes/lizards (Reptilia), 
-            making it a valuable resource for multimodal vision-language AI models for biodiversity assessment and agriculture research. Each image is annotated with scientific names, 
-            taxonomic details, and common names, enhancing the robustness of AI model training. We showcase the value of Arboretum by releasing a suite of CLIP models trained using a 
-            subset of 40 million captioned images. We introduce several new benchmarks for rigorous assessment, report accuracy for zero-shot learning, and evaluations across life stages, 
-            rare species, confounding species, and various levels of the taxonomic hierarchy. We anticipate that Arboretum will spur the development of AI models that can enable a 
-            variety of digital tools ranging from pest control strategies, crop monitoring, and worldwide biodiversity assessment and environmental conservation. These advancements are 
-            critical for ensuring food security, preserving ecosystems, and mitigating the impacts of climate change. Arboretum is publicly available, easily accessible, and ready for immediate use.
+            We introduce BIOTROVE, the largest publicly accessible dataset designed to advance AI applications in biodiversity. 
+            Curated from the iNaturalist platform and vetted by domain experts to include only research-grade data, BIOTROVE contains 161.9 million images, 
+            offering unprecedented scale and diversity from three primary kingdoms: Animalia ("animals"), Fungi ("fungi"), and Plantae ("plants"), spanning 
+            approximately 366.6K species. Each image is annotated with scientific names, taxonomic hierarchies, and common names, providing rich metadata to support accurate 
+            AI model development across diverse species and ecosystems. We demonstrate the value of BIOTROVE by releasing a suite of CLIP models trained using a subset of 40 million 
+            captioned images, known as BIOTROVE-TRAIN. This subset focuses on seven categories within the dataset that are underrepresented in standard image recognition models, 
+            selected for their critical role in biodiversity and agriculture: Aves ("birds"), Arachnida ("spiders/ticks/mites"), Insecta ("insects"), Plantae ("plants"), Fungi ("fungi"), 
+            Mollusca ("snails"), and Reptilia ("snakes/lizards"). To support rigorous assessment, we introduce several new benchmarks and report model accuracy for zero-shot learning across 
+            life stages, rare species, confounding species, and multiple taxonomic levels. We anticipate that BIOTROVE will spur the development of AI models capable of supporting digital tools 
+            for pest control, crop monitoring, biodiversity assessment, and environmental conservation. These advancements are crucial for ensuring food security, preserving ecosystems, and mitigating 
+            the impacts of climate change. BIOTROVE is publicly available, easily accessible, and ready for immediate use.
           </p>
         </div>
       </div>
@@ -356,7 +357,7 @@
             <img src="static/images/category_distribution.png" alt="Category Distribution" style="cursor: pointer; width: 80%; height: auto;">
           </div>
           <p class="description">
-            Distribution of the Arboretum dataset. (a) Size of each taxonomic class in the Arboretum dataset. 
+            Distribution of the BioTrove dataset. (a) Size of each taxonomic class in the BioTrove dataset. 
             (b) Species counts for each taxonomic class. (c) The 40 highest occuring species.
           </p>
           
@@ -365,7 +366,7 @@
             <img src="static/images/treemap_134M_v1.png" alt="Sample Image 2" style="cursor: pointer; width: 80%; height: auto;">
           </div>
           <p class="description">
-            Treemap diagram of the Arboretum Dataset, starting from Kingdom. The nested boxes represent phyla, 
+            Treemap diagram of the BioTrove Dataset, starting from Kingdom. The nested boxes represent phyla, 
             (taxonomic) classes, orders, and families. Box size represents the relative number of samples.
           </p>
           
@@ -374,7 +375,7 @@
             <img src="static/images/comparison.png" alt="Sample Image 3" style="cursor: pointer; width: 80%; height: auto;">
           </div>
           <p class="description">
-            Comparison of Arboretum Dataset with existing biodiversity datasets.
+            Comparison of BioTrove Dataset with existing biodiversity datasets.
           </p>
         </div>
       </div>
@@ -389,7 +390,7 @@
       <h2 class="title is-3">Data Preparation</h2>
       <div class="content">
         <p>
-          Our <a href="https://github.com/baskargroup/Arboretum/blob/main/Arbor-preprocess/README_arbor_process.md" target="_blank" class="underline-link">Github</a> includes the pipeline and <a href="https://pypi.org/project/arbor-process/" target="_blank" class="underline-link">arbor-process</a> package installation instructions for the data preparation. 
+          Our <a href="https://github.com/baskargroup/BioTrove/blob/main/Arbor-preprocess/README_arbor_process.md" target="_blank" class="underline-link">Github</a> includes the pipeline and <a href="https://pypi.org/project/arbor-process/" target="_blank" class="underline-link">arbor-process</a> package installation instructions for the data preparation. 
           The metadata can be downloaded from <a href="https://huggingface.co/datasets/ChihHsuan-Yang/Arboretum" target="_blank" class="underline-link">HF</a>. This procedure will generate machine learning-ready image-text pairs from the downloaded metadata in four steps:
         </p>
       </div>
@@ -415,21 +416,21 @@
       <h1 class="title is-3">Dataset Benchmarks</h1>
       <div class="content">
         <p>
-        <b>ARBORETUM</b> consists of several benchmark datasets - <b>ARBORETUM-40M</b> and <b>New Benchmarks</b>.
+        <b>BioTrove</b> consists of several benchmark datasets - <b>BioTrove-40M</b> and <b>New Benchmarks</b>.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Arboretum40M Subsection -->
+<!-- BioTrove40M Subsection -->
 <section class="hero is-small" style="margin-bottom: 1rem;">
   <div class="hero-body" style="padding-bottom: 1rem;">
     <div class="container">
-      <h2 class="title is-4">ARBORETUM-40M</h3>
+      <h2 class="title is-4">BioTrove-40M</h3>
       <div class="content">
         <p>
-        <b>ARBORETUM-40M</b> is a subset comprising approximately 40M samples and 33K species from the seven <b>ARBORETUM</b> categories (iNaturalist prior to January 27, 2024).
+        <b>BioTrove-40M</b> is a subset comprising approximately 40M samples and 33K species from the seven <b>BioTrove</b> categories (iNaturalist prior to January 27, 2024).
         It contains 30 to maximum of 50,000 samples per species. We conducted semi-global shuffling and divided the data into mini-batches of approximately 50,000 samples each. From these
         mini-batches, 95% were randomly selected for training and validation, while the remaining 5% were reserved for testing.
         </p>
@@ -437,7 +438,7 @@
       <div class="image-container" style="text-align: center;">
         <img src="static/images/arboretum40m.png" alt="lifestages" style="width: 80%; height: auto;">
         <p class="caption has-text-centered">
-          Training data sources used in ARBORETUM-40M and Diversity in Different Taxonomy Levels. We integrate taxonomic labels into the images to train the models.
+          Training data sources used in BioTrove-40M and Diversity in Different Taxonomy Levels. We integrate taxonomic labels into the images to train the models.
         </p>
       </div>
     </div>
@@ -451,13 +452,13 @@
       <h2 class="title is-4">New Benchmark</h3>
       <div class="content">
         <p>
-          From <b>ARBORETUM</b>, we created three new benchmark datasets for fine-grained image classification. They are- <b>Arboretum-Balanced</b>, <b>Arboretum-Unseen</b> and <b>Arboretum-LifeStages</b>.
+          From <b>BioTrove</b>, we created three new benchmark datasets for fine-grained image classification. They are- <b>BioTrove-Balanced</b>, <b>BioTrove-Unseen</b> and <b>BioTrove-LifeStages</b>.
         </p>
       </div>
       <div class="image-container" style="text-align: center;">
         <img src="static/images/lifestages.png" alt="lifestages" style="width: 80%; height: auto;">
         <p class="caption has-text-centered">
-          (a) Example images from Arboretum-Unseen. (b) ARBORETUM-LIFE-STAGES with 20 class labels: four life stages 
+          (a) Example images from BioTrove-Unseen. (b) BioTrove-LIFE-STAGES with 20 class labels: four life stages 
             (egg, larva, pupa, and adult) for five distinct insect species
         </p>
       </div>
@@ -473,7 +474,7 @@
       <!-- Explanation text space -->
       <div class="content">
         <p>
-          We use <b>ARBORETUM-40M</b> to train new CLIP-style foundation models (ARBORCLIP), and then evaluate them on zero-shot image classification tasks. 
+          We use <b>BioTrove-40M</b> to train new CLIP-style foundation models (ARBORCLIP), and then evaluate them on zero-shot image classification tasks. 
           A ViT-B/16 backbone initialized from the OpenAI CLIP weights, a ViT-L/14 from the MetaCLIP and a ViT-B/16 from the BioCLIP checkpoint.
           The ArborCLIP model is designed to analyze and categorize various plant species using advanced machine learning techniques. 
           It leverages a vast dataset and sophisticated algorithms to achieve high accuracy in species recognition.
