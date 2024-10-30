@@ -1,7 +1,7 @@
 # BioTrove: A Large Curated Image Dataset Enabling AI for Biodiversity
 <!-- Banner links -->
 <div style="text-align:center; margin-top: 20px;">
-  <a href="https://baskargroup.github.io/Arboretum/" target="_blank">
+  <a href="https://baskargroup.github.io/BioTrove/" target="_blank">
     <img src="https://img.shields.io/badge/Project%20Page-Visit-blue" alt="Project Page" style="margin-right:10px;">
   </a>
   <a href="https://huggingface.co/datasets/ChihHsuan-Yang/Arboretum" target="_blank">
