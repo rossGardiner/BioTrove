@@ -453,8 +453,8 @@
       <h2 class="title is-3">Data Preparation</h2>
       <div class="content">
         <p>
-          Our <a href="https://github.com/baskargroup/BioTrove/blob/main/Arbor-preprocess/README_arbor_process.md" target="_blank" class="underline-link">Github</a> includes the pipeline and <a href="https://pypi.org/project/arbor-process/" target="_blank" class="underline-link">arbor-process</a> package installation instructions for the data preparation. 
-          The metadata can be downloaded from <a href="https://huggingface.co/datasets/BGLab/BioTrove-Train" target="_blank" class="underline-link">HF</a>. This procedure will generate machine learning-ready image-text pairs from the downloaded metadata in four steps:
+          Our <a href="https://github.com/baskargroup/BioTrove/blob/main/Arbor-preprocess/README_arbor_process.md" target="_blank" class="underline-link">Github</a> includes the pipeline and <a href="https://pypi.org/project/arbor-process/" target="_blank" class="underline-link">biotrove-process</a> package installation instructions for the data preparation. 
+          The metadata can be downloaded from the HuggingFace dataset cards: <a href="https://huggingface.co/datasets/BGLab/BioTrove-Train" target="_blank" class="underline-link">BioTrove-Train</a> and <a href="https://huggingface.co/datasets/BGLab/BioTrove" target="_blank" class="underline-link">BioTrove</a> (main). This procedure will generate machine learning-ready image-text pairs from the downloaded metadata in four steps:
         </p>
       </div>
       <div class="image-container" style="text-align: center;">
@@ -479,7 +479,7 @@
       <!-- Explanation text space -->
       <div class="content">
         <p>
-          We use <b>BioTrove-Train</b> to train new CLIP-style foundation models (ARBORCLIP), and then evaluate them on zero-shot image classification tasks. 
+          We use <b>BioTrove-Train</b> to train new CLIP-style foundation models, and then evaluate them on zero-shot image classification tasks. 
           A ViT-B/16 backbone initialized from the OpenAI CLIP weights, a ViT-L/14 from the MetaCLIP and a ViT-B/16 from the BioCLIP checkpoint.
           The BioTrove-CLIP model is designed to analyze and categorize various plant species using advanced machine learning techniques. 
           It leverages a vast dataset and sophisticated algorithms to achieve high accuracy in species recognition.
