@@ -1,4 +1,4 @@
-# Arboretum: A Large Multimodal Dataset Enabling AI for Biodiversity
+# BioTrove: A Large Curated Image Dataset Enabling AI for Biodiversity
 <!-- Banner links -->
 <div style="text-align:center; margin-top: 20px;">
   <a href="https://baskargroup.github.io/Arboretum/" target="_blank">
@@ -21,7 +21,7 @@
 <hr style="margin: 10px 0; border: 0; border-top: 0.5px solid #ccc;">
 
 ### Contents
-- [Arboretum: A Large Multimodal Dataset Enabling AI for Biodiversity](#arboretum-a-large-multimodal-dataset-enabling-ai-for-biodiversity)
+- [BioTrove: A Large Curated Image Dataset Enabling AI for Biodiversity](#arboretum-a-large-multimodal-dataset-enabling-ai-for-biodiversity)
     - [Contents](#contents)
   - [Data Preprocessing](#data-preprocessing)
   - [Model Training](#model-training)
@@ -36,7 +36,7 @@
 
 ## Data Preprocessing
 
-**Before using this script, please download the metadata from [Hugging Face](https://huggingface.co/datasets/ChihHsuan-Yang/Arboretum)** and pre-process the data using the `arbor_process` library. The library is located in the `Arboretum/Arbor-preprocess` directory. A detailed description can be found in the [Arbor-preprocess/README](Arbor-preprocess/README_arbor_process.md) file.
+**Before using this script, please download the metadata from [Hugging Face](https://huggingface.co/datasets/ChihHsuan-Yang/BioTrove)** and pre-process the data using the `arbor_process` library. The library is located in the `BioTrove/Arbor-preprocess` directory. A detailed description can be found in the [Arbor-preprocess/README](Arbor-preprocess/README_arbor_process.md) file.
 
 The library contains scripts to generate machine learning-ready image-text pairs from the downloaded metadata in four steps:
 
@@ -47,7 +47,7 @@ The library contains scripts to generate machine learning-ready image-text pairs
 
 ## Model Training
 
-We train three models using a modified version of the [BioCLIP / OpenCLIP](https://github.com/Imageomics/bioclip/tree/main/src/training) codebase. Each model is trained for 40 epochs on Arboretum-40M, on 2 nodes, 8xH100 GPUs, on NYU's [Greene](https://sites.google.com/nyu.edu/nyu-hpc/hpc-systems/greene) high-performance compute cluster.
+We train three models using a modified version of the [BioCLIP / OpenCLIP](https://github.com/Imageomics/bioclip/tree/main/src/training) codebase. Each model is trained for 40 epochs on BioTrove-40M, on 2 nodes, 8xH100 GPUs, on NYU's [Greene](https://sites.google.com/nyu.edu/nyu-hpc/hpc-systems/greene) high-performance compute cluster.
 
 We optimize our hyperparameters prior to training with [Ray](https://docs.ray.io/en/latest/index.html). Our standard training parameters are as follows:
 
@@ -79,9 +79,9 @@ For more extensive documentation of the training process and the significance of
 
 ## Model weights
 
-**See the [ArborCLIP](https://huggingface.co/ChihHsuan-Yang/ArborCLIP) Model card on HuggingFace to download the trained model checkpoints.**
+**See the [BioTroveCLIP](https://huggingface.co/ChihHsuan-Yang/ArborCLIP) Model card on HuggingFace to download the trained model checkpoints.**
 
-We released three trained model checkpoints in the [ArborCLIP](https://huggingface.co/ChihHsuan-Yang/ArborCLIP) model card on HuggingFace. These CLIP-style models were trained on [ARBORETUM-40M](https://baskargroup.github.io/Arboretum/) for the following configurations: 
+We released three trained model checkpoints in the [BioTroveCLIP](https://huggingface.co/ChihHsuan-Yang/ArborCLIP) model card on HuggingFace. These CLIP-style models were trained on [BioTrove-40M](https://baskargroup.github.io/BioTrove/) for the following configurations: 
 
 - **ARBORCLIP-O:** Trained a ViT-B/16 backbone initialized from the [OpenCLIP's](https://github.com/mlfoundations/open_clip) checkpoint. The training was conducted for 40 epochs.
 - **ARBORCLIP-B:** Trained a ViT-B/16 backbone initialized from the [BioCLIP's](https://github.com/Imageomics/BioCLIP) checkpoint. The training was conducted for 8 epochs.
@@ -96,7 +96,7 @@ For validating the zero-shot accuracy of our trained models and comparing to oth
 
 ### Pre-Run
 
-After cloning this repository and navigating to the `Arboretum/model_validation` directory, we recommend installing all the project requirements into a conda container; `pip install -r requirements.txt`. Also, before executing a command in VLHub, please add `Arboretum/model_validation/src` to your PYTHONPATH.
+After cloning this repository and navigating to the `BioTrove/model_validation` directory, we recommend installing all the project requirements into a conda container; `pip install -r requirements.txt`. Also, before executing a command in VLHub, please add `BioTrove/model_validation/src` to your PYTHONPATH.
 
 ```bash
 export PYTHONPATH="$PYTHONPATH:$PWD/src";
@@ -104,7 +104,7 @@ export PYTHONPATH="$PYTHONPATH:$PWD/src";
 
 ### Base Command
 
-A basic Arboretum model evaluation command can be launched as follows. This example would evaluate a CLIP-ResNet50 checkpoint whose weights resided at the path designated via the `--resume` flag on the ImageNet validation set, and would report the results to Weights and Biases.
+A basic BioTrove model evaluation command can be launched as follows. This example would evaluate a CLIP-ResNet50 checkpoint whose weights resided at the path designated via the `--resume` flag on the ImageNet validation set, and would report the results to Weights and Biases.
 
 ```bash
 python src/training/main.py --batch-size=32 --workers=8 --imagenet-val "/imagenet/val/" --model="resnet50" --zeroshot-frequency=1 --image-size=224 --resume "/PATH/TO/WEIGHTS.pth" --report-to wandb
@@ -124,7 +124,7 @@ We compare our trained checkpoints to three strong baselines. We describe our ba
 
 ### Existing Benchmarks
 
-In the Arboretum paper, we report results on the following established benchmarks from prior scientific literature: [Birds525](https://www.kaggle.com/datasets/gpiosenka/100-bird-species), [BioCLIP-Rare](https://huggingface.co/datasets/imageomics/rare-species), [IP102 Insects](https://www.kaggle.com/datasets/rtlmhjbn/ip02-dataset), [Fungi](http://ptak.felk.cvut.cz/plants/DanishFungiDataset/DF20M-images.tar.gz), [Deepweeds](https://www.kaggle.com/datasets/imsparsh/deepweeds), and [Confounding Species](https://arxiv.org/abs/2306.02507). We also introduce three new benchmarks: Arboretum-Balanced, Arboretum-LifeStages, and Arboretum-Unseen.
+In the BioTrove paper, we report results on the following established benchmarks from prior scientific literature: [Birds525](https://www.kaggle.com/datasets/gpiosenka/100-bird-species), [BioCLIP-Rare](https://huggingface.co/datasets/imageomics/rare-species), [IP102 Insects](https://www.kaggle.com/datasets/rtlmhjbn/ip02-dataset), [Fungi](http://ptak.felk.cvut.cz/plants/DanishFungiDataset/DF20M-images.tar.gz), [Deepweeds](https://www.kaggle.com/datasets/imsparsh/deepweeds), and [Confounding Species](https://arxiv.org/abs/2306.02507). We also introduce three new benchmarks: BioTrove-Balanced, BioTrove-LifeStages, and BioTrove-Unseen.
 
 Our package expects a valid path to each image to exist in its corresponding metadata file; therefore, **metadata CSV paths must be updated before running each benchmark.**
 
