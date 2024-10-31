@@ -4,14 +4,14 @@
   <a href="https://baskargroup.github.io/BioTrove/" target="_blank">
     <img src="https://img.shields.io/badge/Project%20Page-Visit-blue" alt="Project Page" style="margin-right:10px;">
   </a>
-  <a href="https://huggingface.co/datasets/ChihHsuan-Yang/Arboretum" target="_blank">
+  <a href="https://huggingface.co/datasets/BGLab/BioTrove" target="_blank">
     <img src="https://img.shields.io/badge/Hugging%20Face-Dataset%20Card-yellow" alt="Hugging Face Dataset" style="margin-right:10px;">
   </a>
-  <a href="https://huggingface.co/ChihHsuan-Yang/ArborCLIP" target="_blank">
+  <a href="https://huggingface.co/BGLab/BioTrove-CLIP" target="_blank">
     <img src="https://img.shields.io/badge/Hugging%20Face-Model%20Card-green" alt="Hugging Face Dataset" style="margin-right:10px;">
   </a>
   <a href="https://pypi.org/project/arbor-process/" target="_blank">
-    <img src="https://img.shields.io/badge/PyPI-arbor--process%200.1.0-orange" alt="PyPI arbor-process 0.1.0">
+    <img src="https://img.shields.io/badge/PyPI-arbor--process%200.1.0-orange" alt="PyPI biotrove-process 0.1.0">
   </a>
 </div>
 
@@ -36,7 +36,7 @@
 
 ## Data Preprocessing
 
-**Before using this script, please download the metadata from [Hugging Face](https://huggingface.co/datasets/ChihHsuan-Yang/BioTrove)** and pre-process the data using the `biotrove_process` library. The library is located in the `BioTrove/Arbor-preprocess` directory. A detailed description can be found in the [README](Arbor-preprocess/README_arbor_process.md) file.
+**Before using this script, please download the metadata from [Hugging Face](https://huggingface.co/datasets/BGLab/BioTrove-Train)** and pre-process the data using the `biotrove_process` library. The library is located in the `BioTrove-preprocess/biotrove_process` directory. A detailed description can be found in the [README](biotrove-preprocess/README_biotrove_process.md) file.
 
 The library contains scripts to generate machine learning-ready image-text pairs from the downloaded metadata in four steps:
 
@@ -79,13 +79,13 @@ For more extensive documentation of the training process and the significance of
 
 ## Model weights
 
-**See the [BioTrove-CLIP](https://huggingface.co/ChihHsuan-Yang/ArborCLIP) Model card on HuggingFace to download the trained model checkpoints.**
+**See the [BioTrove-CLIP](https://huggingface.co/BGLab/BioTrove-CLIP) Model card on HuggingFace to download the trained model checkpoints.**
 
-We released three trained model checkpoints in the [BioTrove-CLIP](https://huggingface.co/ChihHsuan-Yang/ArborCLIP) model card on HuggingFace. These CLIP-style models were trained on [BioTrove-Train](https://baskargroup.github.io/BioTrove/) for the following configurations: 
+We released three trained model checkpoints in the [BioTrove-CLIP](https://huggingface.co/BGLab/BioTrove-CLIP) model card on HuggingFace. These CLIP-style models were trained on [BioTrove-Train (40M)](https://huggingface.co/datasets/BGLab/BioTrove-Train) for the following configurations: 
 
-- **ARBORCLIP-O:** Trained a ViT-B/16 backbone initialized from the [OpenCLIP's](https://github.com/mlfoundations/open_clip) checkpoint. The training was conducted for 40 epochs.
-- **ARBORCLIP-B:** Trained a ViT-B/16 backbone initialized from the [BioCLIP's](https://github.com/Imageomics/BioCLIP) checkpoint. The training was conducted for 8 epochs.
-- **ARBORCLIP-M:** Trained a ViT-L/14 backbone initialized from the [MetaCLIP's](https://github.com/facebookresearch/MetaCLIP) checkpoint. The training was conducted for 12 epochs.
+- **BT-CLIP-O:** Trained a ViT-B/16 backbone initialized from the [OpenCLIP's](https://github.com/mlfoundations/open_clip) checkpoint. The training was conducted for 40 epochs.
+- **BT-CLIP-B:** Trained a ViT-B/16 backbone initialized from the [BioCLIP's](https://github.com/Imageomics/BioCLIP) checkpoint. The training was conducted for 8 epochs.
+- **BT-CLIP-M:** Trained a ViT-L/14 backbone initialized from the [MetaCLIP's](https://github.com/facebookresearch/MetaCLIP) checkpoint. The training was conducted for 12 epochs.
 
 
 These models were developed for the benefit of the AI community as an open-source product. Thus, we request that any derivative products are also open-source.
@@ -130,9 +130,9 @@ Our package expects a valid path to each image to exist in its corresponding met
 
 | Benchmark Name      | Images URL                                                             | Metadata Path                                       | Runtime Flag(s)                     |
 |---------------------|------------------------------------------------------------------------|-----------------------------------------------------|-------------------------------------|
-| BioTrove-Balanced  | https://huggingface.co/datasets/ChihHsuan-Yang/Arboretum               | model_validation/metadata/arboretum_test_metadata.csv | --arbor-val --taxon MY_TAXON      |
-| BioTrove-Lifestages | https://huggingface.co/datasets/ChihHsuan-Yang/Arboretum              | model_validation/metadata/final_lifestages_metadata.csv | --lifestages --taxon MY_TAXON   |
-| BioTrove-Rare      | https://huggingface.co/datasets/ChihHsuan-Yang/Arboretum               | model_validation/metadata/arboretum_rare_combined_metadata.csv | --arbor-rare --taxon MY_TAXON |
+| BioTrove-Balanced  | https://huggingface.co/datasets/BGLab/BioTrove-Train               | model_validation/metadata/arboretum_test_metadata.csv | --arbor-val --taxon MY_TAXON      |
+| BioTrove-Lifestages | https://huggingface.co/datasets/BGLab/BioTrove-Train              | model_validation/metadata/final_lifestages_metadata.csv | --lifestages --taxon MY_TAXON   |
+| BioTrove-Unseen      | https://huggingface.co/datasets/BGLab/BioTrove-Train               | model_validation/metadata/arboretum_rare_combined_metadata.csv | --arbor-rare --taxon MY_TAXON |
 | BioCLIP Rare        | https://huggingface.co/datasets/imageomics/rare-species                | model_validation/metadata/bioclip-rare-metadata.csv | --bioclip-rare --taxon MY_TAXON     |
 | Birds525            | https://www.kaggle.com/datasets/gpiosenka/100-bird-species             | model_validation/metadata/birds525_metadata.csv     | --birds /birds525 --ds-filter birds |
 | Confounding Species | TBD                                                                    | model_validation/metadata/confounding_species.csv   | --confounding                       |
