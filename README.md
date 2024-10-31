@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/Hugging%20Face-Model%20Card-green" alt="Hugging Face Dataset" style="margin-right:10px;">
   </a>
   <a href="https://pypi.org/project/arbor-process/" target="_blank">
-    <img src="https://img.shields.io/badge/PyPI-arbor--process%200.1.0-orange" alt="PyPI biotrove-process 0.1.0">
+    <img src="https://img.shields.io/badge/PyPI-biotrove--process%200.1.0-orange" alt="PyPI biotrove-process 0.1.0">
   </a>
 </div>
 
