@@ -303,8 +303,8 @@
             approximately 366.6K species. Each image is annotated with scientific names, taxonomic hierarchies, and common names, providing rich metadata to support accurate 
             AI model development across diverse species and ecosystems. We demonstrate the value of BIOTROVE by releasing a suite of CLIP models trained using a subset of 40 million 
             captioned images, known as BIOTROVE-TRAIN. This subset focuses on seven categories within the dataset that are underrepresented in standard image recognition models, 
-            selected for their critical role in biodiversity and agriculture: <i>Aves</i>("birds"),<i>Arachnida</i>("spiders/ticks/mites"), <i>Insecta</i>("insects"), 
-            <i>Plantae</i>("plants"), <i>Fungi</i>("fungi"), <i>Mollusca</i>("snails") and <i>Reptilia</i>("snakes/lizards"). To support rigorous assessment, we introduce several new benchmarks and report model accuracy for zero-shot learning across 
+            selected for their critical role in biodiversity and agriculture: <i>Aves</i> ("birds"),<i>Arachnida</i> ("spiders/ticks/mites"),<i>Insecta</i> ("insects"), 
+            <i>Plantae</i> ("plants"),<i>Fungi</i> ("fungi"),<i>Mollusca</i> ("snails") and <i>Reptilia</i> ("snakes/lizards"). To support rigorous assessment, we introduce several new benchmarks and report model accuracy for zero-shot learning across 
             life stages, rare species, confounding species, and multiple taxonomic levels. We anticipate that BIOTROVE will spur the development of AI models capable of supporting digital tools 
             for pest control, crop monitoring, biodiversity assessment, and environmental conservation. These advancements are crucial for ensuring food security, preserving ecosystems, and mitigating 
             the impacts of climate change. BIOTROVE is publicly available, easily accessible, and ready for immediate use.
@@ -459,7 +459,7 @@
       <div class="content">
         <p>
           Our <a href="https://github.com/baskargroup/BioTrove/blob/main/Arbor-preprocess/README_arbor_process.md" target="_blank" class="underline-link">Github</a> includes the pipeline and <a href="https://pypi.org/project/arbor-process/" target="_blank" class="underline-link">biotrove-process</a> package installation instructions for the data preparation. 
-          The metadata can be downloaded from the HuggingFace dataset cards: <a href="https://huggingface.co/datasets/BGLab/BioTrove-Train" target="_blank" class="underline-link">BioTrove-Train</a> and <a href="https://huggingface.co/datasets/BGLab/BioTrove" target="_blank" class="underline-link">BioTrove</a> (main). This procedure will generate machine learning-ready image-text pairs from the downloaded metadata in four steps:
+          The metadata can be downloaded from the HuggingFace dataset cards: <a href="https://huggingface.co/datasets/BGLab/BioTrove-Train" target="_blank" class="underline-link">BioTrove-Train</a> and <a href="https://huggingface.co/datasets/BGLab/BioTrove" target="_blank" class="underline-link">BioTrove (main)</a>. This procedure will generate machine learning-ready image-text pairs from the downloaded metadata in four steps:
         </p>
       </div>
       <div class="image-container" style="text-align: center;">
@@ -485,8 +485,10 @@
       <div class="content">
         <p>
           We use <b>BioTrove-Train</b> to train new CLIP-style foundation models, and then evaluate them on zero-shot image classification tasks. 
-          A ViT-B/16 backbone initialized from the OpenAI CLIP weights, a <code>ViT-L/14</code> from the MetaCLIP and a <code>ViT-B/16</code> from the BioCLIP checkpoint.
-          The BioTrove-CLIP model is designed to analyze and categorize various plant species using advanced machine learning techniques. 
+          A <code>ViT-B/16</code> backbone initialized from the OpenAI <a href="https://arxiv.org/abs/2103.00020" target="_blank" class="underline-link">CLIP</a> weights, 
+          a <code>ViT-L/14</code> from the <a href="https://github.com/facebookresearch/MetaCLIP" target="_blank" class="underline-link">MetaCLIP</a> and 
+          a <code>ViT-B/16</code> from the <a href="https://arxiv.org/abs/2311.18803" target="_blank" class="underline-link">BioCLIP</a> checkpoint were trained to develop these models.
+          The BioTrove-CLIP models are designed to analyze and categorize various plant species using advanced machine learning techniques. 
           It leverages a vast dataset and sophisticated algorithms to achieve high accuracy in species recognition.
         </p>
       </div>
@@ -551,7 +553,7 @@
       <div class="rows">
           <div class="rows is-centered ">
               <div class="row is-full-width has-text-centered">
-                  <h2 class="title is-3"><span class="dvima">Team</span></h2>
+                  <h2 class="title is-3"><span class="dvima"><code>Team</code></span></h2>
                   <div class="columns" style="max-width: 95%; padding-left: 10%;">
                       <div class="column has-text-centered video-column">
                           <a href="https://www.linkedin.com/in/chih-hsuan-yang-isu/" target="_blank" style="border-bottom: none;">
