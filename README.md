@@ -130,9 +130,9 @@ Our package expects a valid path to each image to exist in its corresponding met
 
 | Benchmark Name      | Images URL                                                             | Metadata Path                                       | Runtime Flag(s)                     |
 |---------------------|------------------------------------------------------------------------|-----------------------------------------------------|-------------------------------------|
-| BioTrove-Balanced  | https://huggingface.co/datasets/BGLab/BioTrove-Train               | model_validation/metadata/arboretum_test_metadata.csv | --arbor-val --taxon MY_TAXON      |
-| BioTrove-Lifestages | https://huggingface.co/datasets/BGLab/BioTrove-Train              | model_validation/metadata/final_lifestages_metadata.csv | --lifestages --taxon MY_TAXON   |
-| BioTrove-Unseen      | https://huggingface.co/datasets/BGLab/BioTrove-Train               | model_validation/metadata/arboretum_rare_combined_metadata.csv | --arbor-rare --taxon MY_TAXON |
+| BioTrove-Balanced  | https://huggingface.co/datasets/BGLab/BioTrove/tree/main/BioTrove-benchmark               | model_validation/metadata/arboretum_test_metadata.csv | --arbor-val --taxon MY_TAXON      |
+| BioTrove-Lifestages | https://huggingface.co/datasets/BGLab/BioTrove/tree/main/BioTrove-benchmark             | model_validation/metadata/final_lifestages_metadata.csv | --lifestages --taxon MY_TAXON   |
+| BioTrove-Unseen      | https://huggingface.co/datasets/BGLab/BioTrove/tree/main/BioTrove-benchmark             | model_validation/metadata/arboretum_rare_combined_metadata.csv | --arbor-rare --taxon MY_TAXON |
 | BioCLIP Rare        | https://huggingface.co/datasets/imageomics/rare-species                | model_validation/metadata/bioclip-rare-metadata.csv | --bioclip-rare --taxon MY_TAXON     |
 | Birds525            | https://www.kaggle.com/datasets/gpiosenka/100-bird-species             | model_validation/metadata/birds525_metadata.csv     | --birds /birds525 --ds-filter birds |
 | Confounding Species | TBD                                                                    | model_validation/metadata/confounding_species.csv   | --confounding                       |
