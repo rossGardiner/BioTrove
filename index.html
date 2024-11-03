@@ -241,6 +241,8 @@
                 <span>Dataset card</span>
               </a>
             </span>
+            <div id="download-count" class="is-size-5 has-text-weight-semibold" style="margin-top: 10px;"></div>
+          </div>
             <span class="link-block">
               <a href="https://huggingface.co/BGLab/BioTrove-CLIP" target="_blank" class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
@@ -264,6 +266,36 @@
     </div>
   </div>
 </section>
+
+<script>
+  $(document).ready(function() {
+    // Replace this with the URL of your Hugging Face dataset page
+    const datasetPageUrl = 'https://huggingface.co/datasets/BGLab/BioTrove';
+
+    // Use fetch to load the HTML content
+    fetch(datasetPageUrl)
+      .then(response => response.text())
+      .then(html => {
+        // Create a temporary DOM element to parse the HTML
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        // Use a querySelector to find the element containing the "Downloads last month" count
+        const downloadCountElement = doc.querySelector('dt:contains("Downloads last month") + dd');
+        
+        if (downloadCountElement) {
+          const downloadCount = downloadCountElement.textContent;
+          $('#download-count').text(`Download count last month: ${downloadCount}`);
+        } else {
+          $('#download-count').text('Download count: unavailable');
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching the dataset page:', error);
+        $('#download-count').text('Download count: unavailable');
+      });
+  });
+</script>
 
 <style>
   code {
