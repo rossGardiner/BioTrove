@@ -273,7 +273,9 @@
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     const datasetPageUrl = 'https://huggingface.co/datasets/BGLab/BioTrove';
 
-    fetch(proxyUrl + datasetPageUrl)
+    fetch('https://huggingface.co/datasets/BGLab/BioTrove',{
+      headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
+    })
       .then(response => {
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.statusText}`);
