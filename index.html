@@ -241,8 +241,6 @@
                 <span>Dataset card</span>
               </a>
             </span>
-            <div id="download-count" class="is-size-5 has-text-weight-semibold" style="margin-top: 10px;"></div>
-          </div>
             <span class="link-block">
               <a href="https://huggingface.co/BGLab/BioTrove-CLIP" target="_blank" class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
@@ -266,66 +264,6 @@
     </div>
   </div>
 </section>
-
-<script>
-  $(document).ready(function() {
-    // Replace this with the URL of your Hugging Face dataset page
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const datasetPageUrl = 'https://huggingface.co/datasets/BGLab/BioTrove';
-
-    fetch('https://huggingface.co/datasets/BGLab/BioTrove',{
-      headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`Network response was not ok: ${response.statusText}`);
-        }
-        return response.text();
-      })
-      .then(html => {
-        try {
-          // Create a temporary DOM element to parse the HTML
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, 'text/html');
-
-          // Find all <dt> elements and check their text content
-          console.log("DOM parsed successfully.");
-          const dtElements = doc.querySelectorAll('dt');
-          if (dtElements.length === 0) {
-            throw new Error('No <dt> elements found in the parsed HTML.');
-          }
-
-          let downloadCount = 'unavailable';
-          dtElements.forEach(dt => {
-            console.log(`Checking <dt> element with text: "${dt.textContent.trim()}"`);
-            if (dt.textContent.trim() === 'Downloads last month') {
-              const ddElement = dt.nextElementSibling;
-              if (ddElement && ddElement.tagName.toLowerCase() === 'dd') {
-                console.log('Corresponding <dd> element found.');
-                downloadCount = ddElement.textContent.trim();
-              } else {
-                throw new Error('No corresponding <dd> element found.');
-              }
-            }
-          });
-
-          if (downloadCount === 'unavailable') {
-            throw new Error('Download count element not found or could not extract value.');
-          }
-
-          // Update the HTML element with the download count
-          $('#download-count').text(`Download count last month: ${downloadCount}`);
-        } catch (extractionError) {
-          console.error('Extraction error:', extractionError);
-          $('#download-count').text(`Error during extraction: ${extractionError.message}`);
-        }
-      })
-      .catch(fetchError => {
-        console.error('Error fetching the dataset page:', fetchError);
-        $('#download-count').text(`Fetch error: ${fetchError.message}`);
-      });
-  });
-</script>
 
 <style>
   code {
