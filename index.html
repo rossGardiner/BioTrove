@@ -274,31 +274,53 @@
 
     // Use fetch to load the HTML content
     fetch(datasetPageUrl)
-      .then(response => response.text())
-      .then(html => {
-        // Create a temporary DOM element to parse the HTML
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-
-        // Find all <dt> elements and check their text content
-        const dtElements = doc.querySelectorAll('dt');
-        let downloadCount = 'unavailable';
-
-        dtElements.forEach(dt => {
-          if (dt.textContent.trim() === 'Downloads last month') {
-            const ddElement = dt.nextElementSibling;
-            if (ddElement && ddElement.tagName.toLowerCase() === 'dd') {
-              downloadCount = ddElement.textContent.trim();
-            }
-          }
-        });
-
-        // Update the HTML element with the download count
-        $('#download-count').text(`Download count last month: ${downloadCount}`);
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.statusText}`);
+        }
+        return response.text();
       })
-      .catch(error => {
-        console.error('Error fetching the dataset page:', error);
-        $('#download-count').text('Download count: unavailable');
+      .then(html => {
+        try {
+          // Create a temporary DOM element to parse the HTML
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+
+          // Find all <dt> elements and check their text content
+          console.log("DOM parsed successfully.");
+          const dtElements = doc.querySelectorAll('dt');
+          if (dtElements.length === 0) {
+            throw new Error('No <dt> elements found in the parsed HTML.');
+          }
+
+          let downloadCount = 'unavailable';
+          dtElements.forEach(dt => {
+            console.log(`Checking <dt> element with text: "${dt.textContent.trim()}"`);
+            if (dt.textContent.trim() === 'Downloads last month') {
+              const ddElement = dt.nextElementSibling;
+              if (ddElement && ddElement.tagName.toLowerCase() === 'dd') {
+                console.log('Corresponding <dd> element found.');
+                downloadCount = ddElement.textContent.trim();
+              } else {
+                throw new Error('No corresponding <dd> element found.');
+              }
+            }
+          });
+
+          if (downloadCount === 'unavailable') {
+            throw new Error('Download count element not found or could not extract value.');
+          }
+
+          // Update the HTML element with the download count
+          $('#download-count').text(`Download count last month: ${downloadCount}`);
+        } catch (extractionError) {
+          console.error('Extraction error:', extractionError);
+          $('#download-count').text(`Error during extraction: ${extractionError.message}`);
+        }
+      })
+      .catch(fetchError => {
+        console.error('Error fetching the dataset page:', fetchError);
+        $('#download-count').text(`Fetch error: ${fetchError.message}`);
       });
   });
 </script>
