@@ -280,15 +280,21 @@
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
 
-        // Use a querySelector to find the element containing the "Downloads last month" count
-        const downloadCountElement = doc.querySelector('dt:contains("Downloads last month") + dd');
-        
-        if (downloadCountElement) {
-          const downloadCount = downloadCountElement.textContent;
-          $('#download-count').text(`Download count last month: ${downloadCount}`);
-        } else {
-          $('#download-count').text('Download count: unavailable');
-        }
+        // Find all <dt> elements and check their text content
+        const dtElements = doc.querySelectorAll('dt');
+        let downloadCount = 'unavailable';
+
+        dtElements.forEach(dt => {
+          if (dt.textContent.trim() === 'Downloads last month') {
+            const ddElement = dt.nextElementSibling;
+            if (ddElement && ddElement.tagName.toLowerCase() === 'dd') {
+              downloadCount = ddElement.textContent.trim();
+            }
+          }
+        });
+
+        // Update the HTML element with the download count
+        $('#download-count').text(`Download count last month: ${downloadCount}`);
       })
       .catch(error => {
         console.error('Error fetching the dataset page:', error);
