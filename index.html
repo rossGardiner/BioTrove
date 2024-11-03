@@ -270,10 +270,10 @@
 <script>
   $(document).ready(function() {
     // Replace this with the URL of your Hugging Face dataset page
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
     const datasetPageUrl = 'https://huggingface.co/datasets/BGLab/BioTrove';
 
-    // Use fetch to load the HTML content
-    fetch(datasetPageUrl)
+    fetch(proxyUrl + datasetPageUrl)
       .then(response => {
         if (!response.ok) {
           throw new Error(`Network response was not ok: ${response.statusText}`);
