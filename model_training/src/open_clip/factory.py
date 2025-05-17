@@ -83,8 +83,8 @@ def get_tokenizer(model_name):
     return tokenizer
 
 
-def load_state_dict(checkpoint_path: str, map_location='cpu'):
-    checkpoint = torch.load(checkpoint_path, map_location=map_location)
+def load_state_dict(checkpoint_path: str, map_location='cpu', weights_only=False):
+    checkpoint = torch.load(checkpoint_path, map_location=map_location, weights_only=weights_only)
     if isinstance(checkpoint, dict) and 'state_dict' in checkpoint:
         state_dict = checkpoint['state_dict']
     else:
@@ -94,8 +94,8 @@ def load_state_dict(checkpoint_path: str, map_location='cpu'):
     return state_dict
 
 
-def load_checkpoint(model, checkpoint_path, strict=True):
-    state_dict = load_state_dict(checkpoint_path)
+def load_checkpoint(model, checkpoint_path, strict=True, weights_only=False):
+    state_dict = load_state_dict(checkpoint_path, weights_only=weights_only)
     # detect old format and make compatible with new format
     if 'positional_embedding' in state_dict and not hasattr(model, 'positional_embedding'):
         state_dict = convert_to_custom_text_state_dict(state_dict)
